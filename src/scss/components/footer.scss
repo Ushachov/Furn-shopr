@@ -1,0 +1,367 @@
+.footer{
+  &__body{
+    display: grid;
+    border-top: 1px solid #d8d8d8;
+    grid-template-columns: 250px 1fr 290px;
+    @include adaptiv-value('column-gap', 80, 0, 1);
+    @include adaptiv-value('padding-top', 80, 30, 1);
+    @include adaptiv-value('padding-bottom', 60, 30, 1);
+
+    @media (max-width: $md1 + px) {
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr 290px;
+    }
+    @media (max-width: $md2 + px) {
+      display: block;
+    }
+  }
+
+  &__main{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @media (max-width: $md1 + px) {
+      grid-column: span 2;
+      @include adaptiv-value('margin-bottom', 40, 30, 1);
+    }
+  }
+
+  &__logo{
+    @media (min-width: $md3 + px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__text{
+    @extend .default-text;
+    &:not(:last-child){
+      @include adaptiv-value("margin-bottom", 16, 12, 1);
+    }
+  }
+
+}
+
+.contacts-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__item{
+    @extend .default-text;
+    display: inline-flex;
+    align-items: center;
+    transition: color .3s ease 0s;
+    &:before{
+      margin-right: 8px;
+    }
+    &:not(:last-child){
+      @include adaptiv-value("margin-bottom", 16, 12, 1);
+    }
+    @media(any-hover: hover){
+      &:hover{
+        color: $orangeColorLight;
+      }
+    }
+  }
+
+}
+
+.menu-footer{
+  @media (min-width: $md3 + px) {
+    display: flex;
+  }
+  @media (max-width: $md1 + px) {
+    @include adaptiv-value('margin-bottom', 40, 30, 1);
+  }
+
+  &__column{
+    @media (min-width: $md3 + px) {
+      flex: 0 1 33.333%;
+    }
+    @media (max-width: $md3 + px) {
+      @include adaptiv-value('margin-bottom', 30, 16, 1);
+    }
+  }
+
+  &__title{
+    cursor: default;
+    @media (min-width: $md3 + px) {
+      margin-bottom: 16px;
+    }
+
+    ._init &{
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      @extend ._icon-arrow-down;
+      &::before{
+        @extend .ic;
+        font-size: 14px;
+        transition: transform .3s ease 0s;
+      }
+    }
+
+    &._active{
+      &::before{
+        transform:rotate(-180deg);
+      }
+    }
+  }
+
+  &__list{
+    @media(max-width: $md3 + px){
+      padding-top: 15px;
+      margin: 0;
+    }
+
+    li{
+      &:not(:last-child){
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__link{
+    @extend .default-text;
+    transition: color .3s ease 0s;
+    &:not(:last-child){
+      @include adaptiv-value("margin-bottom", 16, 12, 1);
+    }
+    @media(any-hover: hover){
+      &:hover{
+        color: $orangeColorLight;
+      }
+    }
+  }
+
+
+}
+
+.subscribe{
+
+  &__title{
+    margin-bottom: 16px;
+    box-sizing: content-box;
+  }
+
+  &__form{
+    display: flex;
+    position: relative;
+  }
+
+  &__btn{
+    flex: 0 0 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background-color: $orangeColor;
+    color: white;
+    margin-left: 4px;
+    cursor: pointer;
+    transition: background-color .3s ease 0s;
+    @media(any-hover: hover){
+      &:hover{
+        background-color: $orangeColorLight;
+      }
+    }
+  }
+
+  .input{
+    width: 100%;
+    padding: 0 12px;
+    background-color: #F4F5F7;
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #828282;
+  }
+
+}.footer{
+  &__body{
+    display: grid;
+    border-top: 1px solid #d8d8d8;
+    grid-template-columns: 250px 1fr 290px;
+    @include adaptiv-value('column-gap', 80, 0, 1);
+    @include adaptiv-value('padding-top', 80, 30, 1);
+    @include adaptiv-value('padding-bottom', 60, 30, 1);
+
+    @media (max-width: $md1 + px) {
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr 290px;
+    }
+    @media (max-width: $md2 + px) {
+      display: block;
+    }
+  }
+
+  &__main{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    @media (max-width: $md1 + px) {
+      grid-column: span 2;
+      @include adaptiv-value('margin-bottom', 40, 30, 1);
+    }
+  }
+
+  &__logo{
+    @media (min-width: $md3 + px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__text{
+    @extend .default-text;
+    &:not(:last-child){
+      @include adaptiv-value("margin-bottom", 16, 12, 1);
+    }
+  }
+
+}
+
+.contacts-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__item{
+    @extend .default-text;
+    display: inline-flex;
+    align-items: center;
+    transition: color .3s ease 0s;
+    &:before{
+      margin-right: 8px;
+    }
+    &:not(:last-child){
+      @include adaptiv-value("margin-bottom", 16, 12, 1);
+    }
+    @media(any-hover: hover){
+      &:hover{
+        color: $orangeColorLight;
+      }
+    }
+  }
+
+}
+
+.menu-footer{
+  @media (min-width: $md3 + px) {
+    display: flex;
+  }
+  @media (max-width: $md1 + px) {
+    @include adaptiv-value('margin-bottom', 40, 30, 1);
+  }
+
+  &__column{
+    @media (min-width: $md3 + px) {
+      flex: 0 1 33.333%;
+    }
+    @media (max-width: $md3 + px) {
+      @include adaptiv-value('margin-bottom', 30, 16, 1);
+    }
+  }
+
+  &__title{
+    cursor: default;
+    @media (min-width: $md3 + px) {
+      margin-bottom: 16px;
+    }
+
+    ._init &{
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      @extend ._icon-arrow-down;
+      &::before{
+        @extend .ic;
+        font-size: 14px;
+        transition: transform .3s ease 0s;
+      }
+    }
+
+    &._active{
+      &::before{
+        transform:rotate(-180deg);
+      }
+    }
+  }
+
+  &__list{
+    @media(max-width: $md3 + px){
+      padding-top: 15px;
+      margin: 0;
+    }
+
+    li{
+      &:not(:last-child){
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__link{
+    @extend .default-text;
+    transition: color .3s ease 0s;
+    &:not(:last-child){
+      @include adaptiv-value("margin-bottom", 16, 12, 1);
+    }
+    @media(any-hover: hover){
+      &:hover{
+        color: $orangeColorLight;
+      }
+    }
+  }
+
+
+}
+
+.subscribe{
+
+  &__title{
+    margin-bottom: 16px;
+    box-sizing: content-box;
+  }
+
+  &__form{
+    display: flex;
+    position: relative;
+  }
+
+  &__btn{
+    flex: 0 0 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background-color: $orangeColor;
+    color: white;
+    margin-left: 4px;
+    cursor: pointer;
+    transition: background-color .3s ease 0s;
+    @media(any-hover: hover){
+      &:hover{
+        background-color: $orangeColorLight;
+      }
+    }
+  }
+
+  .input{
+    width: 100%;
+    padding: 0 12px;
+    background-color: #F4F5F7;
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #828282;
+  }
+
+}

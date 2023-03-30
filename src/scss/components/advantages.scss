@@ -1,0 +1,41 @@
+.advantages{
+  @include adaptiv-value("padding-top", 88, 35, 1);
+  @include adaptiv-value("padding-bottom", 88, 35, 1);
+
+  &__container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item{
+    display: grid;
+    grid-template: auto auto / 85px 1fr;
+    padding: 15px 0;
+    @media (max-width: $md3 + px) {
+      grid-template: auto auto / auto 1fr;
+      min-width: 285px;
+    }
+  }
+
+  &__img{
+    grid-row: span 2;
+    text-align: center;
+    align-self: center;
+    @media(max-width: $md3 + px){
+      padding-right: 15px;
+    }
+  }
+
+  &__title{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: $mainColor;
+  }
+
+  &__text{
+    @extend .default-text;
+  }
+
+}

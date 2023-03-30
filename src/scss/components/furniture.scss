@@ -1,0 +1,91 @@
+.furniture{
+  @include adaptiv-value("padding-bottom", 85, 40, 1);
+
+  &__label{
+    color: $darkGrayColor;
+    line-height: 10%;
+    text-align: center;
+    @include adaptiv-value("font-size", 20, 16, 1);
+    margin-bottom: 8px;
+  }
+
+  &__title{
+    margin-bottom: 32px / 40px * 1em;
+  }
+
+  &__body{
+    position: relative;
+    @media(any-hover: none){
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  &__items{
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    gap: 16px;
+    align-items: center;
+    @media(any-hover: hover){
+      justify-content: center;
+    }
+  }
+
+  &__column{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 -8px;
+    &:first-child{
+      justify-content: flex-end;
+    }
+  }
+
+  &__row{
+    display: inline-grid;
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    gap: 16px;
+    padding: 0 8px;
+    &:not(:last-child){
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.row-furniture{
+  &_left-top{
+    justify-content: end;
+    align-items: end;
+  }
+
+  &_left-bottom{
+    justify-content: start;
+    align-items: start;
+  }
+
+  &_center{
+    display: block;
+  }
+
+  &_right-top{
+    align-items: end;
+  }
+
+  &_right-bottom{
+    align-items: start;
+  }
+
+  @media(any-hover: hover){
+    &__item{
+      transition: all .3s ease 0s;
+      filter: grayscale(1);
+      &:hover{
+        filter: grayscale(0);
+      }
+    }
+  }
+
+}
+
